@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "The AWS region to create things in."
-  default     = "eu-west-1"
+  default     = "us-east-1"
 }
 
 variable "instance_count" {
@@ -23,12 +23,12 @@ variable "instance_prefix" {
 
 variable "aws_ami" {
   description = "The AWS AMI."
-  default     = "ami-040ba9174949f6de4"
+  default     = "ami-0b5eea76982371e91" #https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html
 }
 
 variable "aws_instance_type" {
   description = "The AWS Instance Type."
-  default     = "t2.small"
+  default     = "t2.small" # Important: Confluent recommends a minimum instance type “t2.large” to run Kafka, so if you modify this it will be out of AWS Free Tier and it will cost you money
 }
 
 variable "vpc_cidr" {
@@ -43,10 +43,5 @@ variable "public_subnet_cidr" {
 
 variable "key_name" {
   description = "Key Pair"
-  default     = "terraform-ansible-pair"
+  default     = "terraform-ansible-pair" # chmod 400 ~/.ssh/terraform-ansible-pair.pem
 }
-
-
-
-
-
