@@ -19,7 +19,6 @@ Apache Kafka is a distributed data store optimized for ingesting and processing 
 # Requirements
 
 **Languages** 
-* Bash
 * HCL
 * YAML
 
